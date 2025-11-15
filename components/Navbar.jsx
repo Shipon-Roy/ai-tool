@@ -33,7 +33,9 @@ export default function Navbar() {
       } text-white`}
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">AI TOOL</h1>
+        <Link href="/">
+          <h1 className="text-2xl font-bold">AI TOOL</h1>
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-6">
