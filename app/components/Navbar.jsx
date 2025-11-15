@@ -84,7 +84,7 @@ export default function Navbar() {
           <button className="px-4 py-2 rounded border border-white/40 text-white hover:bg-white/10 transition duration-300">
             Sign in
           </button>
-          <button className="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded transition duration-300">
+          <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 font-medium transition duration-300">
             Sign up
           </button>
         </div>
@@ -193,7 +193,7 @@ export default function Navbar() {
             <button className="px-4 py-2 border border-white/40 text-white rounded hover:bg-white/10 transition">
               Sign in
             </button>
-            <button className="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded transition">
+            <button className="  px-4 py-2 rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 font-medium transition duration-300">
               Sign up
             </button>
           </div>
