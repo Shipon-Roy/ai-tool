@@ -7,15 +7,15 @@ export default function Footer() {
     <footer className="relative z-10 pb-[4.375rem] lg:pb-[5.625rem] xl:pb-[6.875rem]">
       {/* Background shapes */}
       <div className="absolute bottom-0 left-0 w-full flex flex-col gap-3 -z-1 opacity-50">
-        <div className="w-full h-[1.24px] bg-gradient-to-r from-purple-500 to-gray-500"></div>
-        <div className="w-full h-[2.47px] bg-gradient-to-r from-purple-500 to-gray-500"></div>
-        <div className="w-full h-[3.71px] bg-gradient-to-r from-purple-500 to-gray-500"></div>
-        <div className="w-full h-[4.99px] bg-gradient-to-r from-purple-500 to-gray-500"></div>
-        <div className="w-full h-[6.19px] bg-gradient-to-r from-purple-500 to-gray-500"></div>
-        <div className="w-full h-[7.42px] bg-gradient-to-r from-purple-500 to-gray-500"></div>
-        <div className="w-full h-[8.66px] bg-gradient-to-r from-purple-500 to-gray-500"></div>
-        <div className="w-full h-[9.90px] bg-gradient-to-r from-purple-500 to-gray-500"></div>
-        <div className="w-full h-[13px] bg-gradient-to-r from-purple-500 to-gray-500"></div>
+        <div className="w-full h-[1.24px] bg-gradient-to-r from-gray-500 to-gray-500"></div>
+        <div className="w-full h-[2.47px] bg-gradient-to-r from-gray-500 to-gray-500"></div>
+        <div className="w-full h-[3.71px] bg-gradient-to-r from-gray-500 to-gray-500"></div>
+        <div className="w-full h-[4.99px] bg-gradient-to-r from-gray-500 to-gray-500"></div>
+        <div className="w-full h-[6.19px] bg-gradient-to-r from-gray-500 to-gray-500"></div>
+        <div className="w-full h-[7.42px] bg-gradient-to-r from-gray-500 to-gray-500"></div>
+        <div className="w-full h-[8.66px] bg-gradient-to-r from-gray-500 to-gray-500"></div>
+        <div className="w-full h-[9.90px] bg-gradient-to-r from-gray-500 to-gray-500"></div>
+        <div className="w-full h-[13px] bg-gradient-to-r from-gray-500 to-gray-500"></div>
       </div>
 
       <div className="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0 relative pt-[4.375rem]">

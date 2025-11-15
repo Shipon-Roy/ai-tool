@@ -1,12 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef();
 
   // Scroll effect for background blur
   useEffect(() => {
@@ -51,25 +54,72 @@ export default function Navbar() {
           </li>
 
           {/* Dropdown */}
-          <li className="relative group cursor-pointer">
-            <button className="flex items-center gap-1 hover:text-pink-500 transition">
-              Pages{" "}
-              <span className="transition-transform group-hover:rotate-180">
-                ▼
-              </span>
+          <li ref={dropdownRef} className="relative">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex items-center justify-between w-full py-2 px-3 rounded font-medium text-gray-100 md:w-auto hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-purple-400"
+            >
+              Pages
+              <svg
+                className={`w-4 h-4 ml-1.5 transition-transform duration-200 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m19 9-7 7-7-7"
+                />
+              </svg>
             </button>
 
-            <ul className="absolute hidden group-hover:block bg-white text-black shadow-lg rounded py-2 w-40 mt-2 z-50">
-              <li className="px-4 py-2 hover:bg-gray-100">
-                <Link href="#about">About</Link>
-              </li>
-              <li className="px-4 py-2 hover:bg-gray-100">
-                <Link href="#blog">Blog</Link>
-              </li>
-              <li className="px-4 py-2 hover:bg-gray-100">
-                <Link href="#contact">Contact</Link>
-              </li>
-            </ul>
+            {/* Dropdown Items */}
+            {isOpen && (
+              <div className="absolute left-0 mt-2 z-20 bg-gray-900 border border-gray-700 rounded-lg w-44 shadow-lg">
+                <ul className="p-2 text-sm text-gray-200 font-medium">
+                  <li>
+                    <Link
+                      href="#"
+                      className="block p-2 rounded hover:bg-gray-700 hover:text-white"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="block p-2 rounded hover:bg-gray-700 hover:text-white"
+                    >
+                      Settings
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="block p-2 rounded hover:bg-gray-700 hover:text-white"
+                    >
+                      Earnings
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="block p-2 rounded hover:bg-gray-700 hover:text-white"
+                    >
+                      Sign Out
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            )}
           </li>
 
           <li>
@@ -167,7 +217,7 @@ export default function Navbar() {
               </button>
 
               <ul
-                className={`ml-4 mt-2 flex flex-col gap-2 text-gray-300 overflow-hidden transition-all duration-500 ${
+                className={`ml-4 mt-2 flex flex-col gap-2 text-gray-300 overflow-hidden transition-all duration-75 ${
                   dropdown ? "max-h-40" : "max-h-0"
                 }`}
               >
